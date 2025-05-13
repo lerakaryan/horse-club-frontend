@@ -8,6 +8,7 @@ import { HorseDetailComponent } from './components/horses/horse-detail.component
 import { AuthGuard } from '../app/services/auth.guard';
 import { ClientFormComponent } from './components/clients/client-form.component';
 import { ClientListComponent } from './components/clients/client-list.component';
+import { ClientDetailComponent } from './components/clients/client-detail.component';
 
 
 export const routes: Routes = [
@@ -17,7 +18,8 @@ export const routes: Routes = [
   { path: 'horses/new', component: HorseFormComponent },
   { path: 'horses/:id', component: HorseDetailComponent },
   { path: 'clients', component: ClientListComponent },
-  { path: 'clients/form', component: ClientFormComponent },
+  { path: 'clients/new', component: ClientFormComponent },
+  { path: 'clients/:id', component: ClientDetailComponent },
 ];
 
 @NgModule({
