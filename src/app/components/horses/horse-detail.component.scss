@@ -24,3 +24,33 @@ h2 {
 div {
   margin-bottom: 8px;
 }
+
+.save-btn {
+  background: #a1887f;
+  color: #fff;
+  width: 100%;
+  font-weight: bold;
+}
+
+.cancel-btn {
+  margin-top: 16px;
+  color: #5d4037;
+  font-weight: bold;
+  width: 100%;
+}
+
+button[mat-button].save-btn,
+button[mat-button].cancel-btn,
+button[mat-button][color="accent"].save-btn,
+button[mat-button][color="accent"].cancel-btn {
+  color: #5d4037 !important;
+}
+
+button[mat-raised-button].save-btn,
+button[mat-raised-button].cancel-btn,
+button[mat-raised-button][color="primary"].save-btn,
+button[mat-raised-button][color="primary"].cancel-btn {
+  color: #5d4037 !important;
+}
+
+

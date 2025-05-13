@@ -32,6 +32,18 @@ export class HorseListComponent implements OnInit {
     this.router.navigate([`/horses/${horse.id}`]);
   }
 
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
+
+  goToClients() {
+    this.router.navigate(['/clients']);
+  }
+  
+  goToAddHorse() {
+    this.router.navigate(['/horses/new']);
+  }
+
   confirmAndDelete(horse: Horse) {
     if (confirm('Вы действительно хотите удалить лошадь?')) {
       if (horse.id !== undefined) {

@@ -6,6 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { Horse } from '../../models/horse.model';
+import { HorseService } from '../../services/horse.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-horse-form',
@@ -18,7 +20,21 @@ export class HorseFormComponent {
   @Input() horse: Horse = { name: '', breed: '' };
   @Output() save = new EventEmitter<Horse>();
 
+  constructor(private horseService: HorseService, private router: Router) {}
+
+
   onSubmit() {
-    this.save.emit(this.horse);
+    this.horseService.create(this.horse).subscribe({
+      next: () => {
+        // Перенаправление после успешного создания
+        this.router.navigate(['/horses']);
+      },
+      error: (err) => {
+        console.error('Ошибка при добавлении лошади', err);
+      }
+    });
+  }
+  goToHorses() {
+    this.router.navigate(['/horses']);
   }
 }

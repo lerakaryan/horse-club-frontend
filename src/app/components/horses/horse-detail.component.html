@@ -10,8 +10,11 @@
         <mat-label>Порода</mat-label>
         <input matInput [(ngModel)]="horse.breed" name="breed" required>
       </mat-form-field>
-      <button mat-raised-button color="primary" type="submit" [disabled]="saving">
+      <button mat-button color="primary" type="submit" [disabled]="saving">
         {{ saving ? 'Сохранение...' : 'Сохранить' }}
+      </button>
+      <button mat-button color="accent" (click)="navigateToHorses()">
+        Отмена
       </button>
     </form>
   </mat-card>

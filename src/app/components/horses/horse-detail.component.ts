@@ -16,6 +16,9 @@ import { HorseService } from '../../services/horse.service';
   styleUrls: ['./horse-detail.component.scss']
 })
 export class HorseDetailComponent implements OnInit {
+  navigateToHorses() {
+    this.router.navigate(['/horses']);
+  }
   horse: Horse = { name: '', breed: '' };
   loading = true;
   saving = false;

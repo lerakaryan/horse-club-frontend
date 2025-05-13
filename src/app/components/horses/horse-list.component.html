@@ -1,12 +1,25 @@
 <div class="horse-list-container">
-  <mat-card class="horse-list-card" *ngFor="let horse of horses">
-    <div class="horse-info">
-      <div><b>Имя:</b> {{ horse.name }}</div>
-      <div><b>Порода:</b> {{ horse.breed }}</div>
-    </div>
-    <div class="horse-actions">
-            <button mat-button color="accent" (click)="editHorse(horse)">Редактировать</button>
-      <button mat-button color="warn" (click)="confirmAndDelete(horse)">Удалить</button>
-    </div>
-  </mat-card>
+  <div class="top-left-link">
+    <button mat-icon-button (click)="goToLogin()">
+      <img src="/assets/door.png" alt="Login" width="32" height="32">
+    </button>
+    <button mat-icon-button (click)="goToClients()">
+      <img src="/assets/clients.png" alt="Clients" width="32" height="32">
+    </button>
+  </div>
+  <div class="horses">
+    <button class="but" mat-raised-button color="primary" (click)="goToAddHorse()">
+      Добавить лошадь
+    </button>
+    <mat-card class="horse-list-card" *ngFor="let horse of horses">
+      <div class="horse-info">
+        <div><b>Имя:</b> {{ horse.name }}</div>
+        <div><b>Порода:</b> {{ horse.breed }}</div>
+      </div>
+      <div class="horse-actions">
+              <button mat-button color="accent" (click)="editHorse(horse)">Редактировать</button>
+        <button mat-button color="warn" (click)="confirmAndDelete(horse)">Удалить</button>
+      </div>
+    </mat-card>
+  </div>
 </div>
