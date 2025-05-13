@@ -1,0 +1,18 @@
+<div class="instructor-detail-container">
+  <mat-card class="instructor-detail-card">
+    <h2>{{ instructor.id ? 'Редактировать инструктора' : 'Добавить инструктора' }}</h2>
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <mat-label>Имя</mat-label>
+        <input matInput [(ngModel)]="instructor.firstName" name="firstName" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Фамилия</mat-label>
+        <input matInput [(ngModel)]="instructor.lastName" name="lastName" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">
+        {{ instructor.id ? 'Сохранить' : 'Добавить' }}
+      </button>
+    </form>
+  </mat-card>
+</div>

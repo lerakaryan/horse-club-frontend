@@ -9,7 +9,9 @@ import { AuthGuard } from '../app/services/auth.guard';
 import { ClientFormComponent } from './components/clients/client-form.component';
 import { ClientListComponent } from './components/clients/client-list.component';
 import { ClientDetailComponent } from './components/clients/client-detail.component';
-
+import { InstructorListComponent } from './components/instructors/instructor-list.component';
+import { InstructorFormComponent } from './components/instructors/instructor-form.component';
+import { InstructorDetailComponent } from './components/instructors/instructor-detail.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,6 +22,9 @@ export const routes: Routes = [
   { path: 'clients', component: ClientListComponent },
   { path: 'clients/new', component: ClientFormComponent },
   { path: 'clients/:id', component: ClientDetailComponent },
+  { path: 'instructors', component: InstructorListComponent },
+  { path: 'instructors/new', component: InstructorFormComponent },
+  { path: 'instructors/:id', component: InstructorDetailComponent },
 ];
 
 @NgModule({

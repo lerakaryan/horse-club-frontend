@@ -1,0 +1,17 @@
+<div class="instructor-form-container">
+  <h2>{{ instructor.id ? 'Редактировать инструктора' : 'Добавить инструктора' }}</h2>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Имя</mat-label>
+      <input matInput [(ngModel)]="instructor.firstName" name="firstName" required>
+    </mat-form-field>
+    <mat-form-field style="margin-left: 5px;">
+      <mat-label>Фамилия</mat-label>
+      <input matInput [(ngModel)]="instructor.lastName" name="lastName" required>
+    </mat-form-field>
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit">Сохранить</button>
+      <button mat-button (click)="onCancel()">Отмена</button>
+    </div>
+  </form>
+</div>
