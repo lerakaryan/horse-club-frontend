@@ -1,0 +1,31 @@
+.horse-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 0;
+  align-items: center;
+  background: #f5eee6;
+}
+
+.horse-list-card {
+  min-width: 340px;
+  width: 100%;
+  max-width: 480px;
+  background: #fff8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(110, 70, 40, 0.08);
+  border: 1px solid #d2b48c;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.horse-info {
+  margin-bottom: 12px;
+}
+
+.horse-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}

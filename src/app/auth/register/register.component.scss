@@ -1,0 +1,67 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: #f5eee6; 
+  }
+  
+  .register-card {
+    padding: 32px 24px;
+    background: #fff8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(110, 70, 40, 0.08); 
+    border: 1px solid #d2b48c; 
+    min-width: 340px;
+  }
+  
+  h2 {
+    color: #795548;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .register-btn {
+    background: #a1887f; 
+    color: #fff;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  .login-btn {
+    margin-top: 16px;
+    color: #5d4037; 
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  .error-message {
+    color: #b71c1c;
+    text-align: center;
+    margin-top: 16px;
+  }
+  
+  .success-message {
+    color: #4caf50; 
+    text-align: center;
+    margin-top: 16px;
+  }
+
+button[mat-button].login-btn,
+button[mat-button].register-btn,
+button[mat-button][color="accent"].login-btn,
+button[mat-button][color="accent"].register-btn {
+  color: #5d4037 !important;
+}
+
+button[mat-raised-button].login-btn,
+button[mat-raised-button].register-btn,
+button[mat-raised-button][color="primary"].login-btn,
+button[mat-raised-button][color="primary"].register-btn {
+  color: #5d4037 !important;
+}

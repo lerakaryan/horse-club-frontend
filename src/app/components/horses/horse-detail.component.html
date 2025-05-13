@@ -1,0 +1,19 @@
+<div class="horse-detail-container" *ngIf="!loading">
+  <mat-card class="horse-detail-card">
+    <h2>Редактировать лошадь</h2>
+    <form (ngSubmit)="save()" #horseForm="ngForm">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Имя</mat-label>
+        <input matInput [(ngModel)]="horse.name" name="name" required>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Порода</mat-label>
+        <input matInput [(ngModel)]="horse.breed" name="breed" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="saving">
+        {{ saving ? 'Сохранение...' : 'Сохранить' }}
+      </button>
+    </form>
+  </mat-card>
+</div>
+<div *ngIf="loading">Загрузка...</div>

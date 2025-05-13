@@ -1,0 +1,29 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <h2>Вход в клуб</h2>
+    <div class="top-right">
+      <button mat-icon-button (click)="goToHorses()">
+        <img src="assets/home.png" alt="Домой" width="32" height="32">
+      </button>
+    </div>
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+      <mat-form-field appearance="outline" color="primary" class="full-width">
+        <mat-label>Логин</mat-label>
+        <input matInput [(ngModel)]="username" name="username" required autocomplete="username">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" color="primary" class="full-width">
+        <mat-label>Пароль</mat-label>
+        <input matInput [(ngModel)]="password" name="password" type="password" required autocomplete="current-password">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="login-btn" type="submit">
+        Войти
+      </button>
+    </form>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+    <button mat-button color="accent" class="register-btn" routerLink="/register" type="button">
+      Зарегистрироваться
+    </button>
+  </mat-card>
+</div>

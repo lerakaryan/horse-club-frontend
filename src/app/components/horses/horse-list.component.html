@@ -1,0 +1,13 @@
+<div class="horse-list-container">
+  <mat-card class="horse-list-card" *ngFor="let horse of horses">
+    <div class="horse-info">
+      <div><b>Имя:</b> {{ horse.name }}</div>
+      <div><b>Порода:</b> {{ horse.breed }}</div>
+    </div>
+    <div class="horse-actions">
+      <button mat-button color="primary" (click)="select.emit(horse)">Подробнее</button>
+      <button mat-button color="accent" (click)="edit.emit(horse)">Редактировать</button>
+      <button mat-button color="warn" (click)="delete.emit(horse)">Удалить</button>
+    </div>
+  </mat-card>
+</div>

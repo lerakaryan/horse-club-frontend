@@ -1,0 +1,18 @@
+<div class="horse-form-container">
+  <mat-card class="horse-form-card">
+    <h2>{{ horse.id ? 'Редактировать лошадь' : 'Добавить лошадь' }}</h2>
+    <form (ngSubmit)="onSubmit()" #horseForm="ngForm">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Имя</mat-label>
+        <input matInput [(ngModel)]="horse.name" name="name" required>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Порода</mat-label>
+        <input matInput [(ngModel)]="horse.breed" name="breed" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="save-btn" type="submit">
+        {{ horse.id ? 'Сохранить' : 'Добавить' }}
+      </button>
+    </form>
+  </mat-card>
+</div>
