@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Horse } from '../../models/horse.model';
 import { HorseService } from '../../services/horse.service';
 
@@ -13,16 +15,37 @@ import { HorseService } from '../../services/horse.service';
   styleUrls: ['./horse-list.component.scss']
 })
 export class HorseListComponent implements OnInit {
-
-  constructor(private horseService: HorseService) {}
-
-  ngOnInit() {
-    this.horseService.getAll().subscribe(horses => {
-      this.horses = horses;
-    });
-  }
   @Input() horses: Horse[] = [];
   @Output() select = new EventEmitter<Horse>();
   @Output() edit = new EventEmitter<Horse>();
   @Output() delete = new EventEmitter<Horse>();
-}
+
+  constructor(private horseService: HorseService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.horseService.getAll().subscribe(horses => {
+      this.horses = horses;
+    });
+  }
+
+  editHorse(horse: Horse) {
+    this.router.navigate([`/horses/${horse.id}`]);
+  }
+
+  confirmAndDelete(horse: Horse) {
+    if (confirm('Вы действительно хотите удалить лошадь?')) {
+      if (horse.id !== undefined) {
+        this.horseService.delete(horse.id).subscribe({
+          next: () => {
+            this.horses = this.horses.filter(h => h.id !== horse.id);
+          },
+          error: (error: HttpErrorResponse) => {
+            if (error.status === 403) {
+              alert('Недостаточно прав для этого действия');
+            }
+          }
+        });
+      }
+      };
+    }
+  }

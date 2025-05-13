@@ -5,9 +5,8 @@
       <div><b>Порода:</b> {{ horse.breed }}</div>
     </div>
     <div class="horse-actions">
-      <button mat-button color="primary" (click)="select.emit(horse)">Подробнее</button>
-      <button mat-button color="accent" (click)="edit.emit(horse)">Редактировать</button>
-      <button mat-button color="warn" (click)="delete.emit(horse)">Удалить</button>
+            <button mat-button color="accent" (click)="editHorse(horse)">Редактировать</button>
+      <button mat-button color="warn" (click)="confirmAndDelete(horse)">Удалить</button>
     </div>
   </mat-card>
 </div>
