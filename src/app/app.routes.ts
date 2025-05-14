@@ -12,6 +12,8 @@ import { ClientDetailComponent } from './components/clients/client-detail.compon
 import { InstructorListComponent } from './components/instructors/instructor-list.component';
 import { InstructorFormComponent } from './components/instructors/instructor-form.component';
 import { InstructorDetailComponent } from './components/instructors/instructor-detail.component';
+import { TrainingListComponent } from './components/trainings/training-list.component';
+//import { TrainingFormComponent } from './components/trainings/training-form.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,6 +27,8 @@ export const routes: Routes = [
   { path: 'instructors', component: InstructorListComponent },
   { path: 'instructors/new', component: InstructorFormComponent },
   { path: 'instructors/:id', component: InstructorDetailComponent },
+  { path: 'trainings', component: TrainingListComponent },
+  //{ path: 'trainings/new', component: TrainingFormComponent },
 ];
 
 @NgModule({

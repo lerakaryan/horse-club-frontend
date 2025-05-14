@@ -43,6 +43,10 @@ export class HorseListComponent implements OnInit {
   goToInstructors() {
     this.router.navigate(['/instructors']);
   }
+
+  goToTrainings() {
+    this.router.navigate(['/trainings']);
+  }
   
   goToAddHorse() {
     this.router.navigate(['/horses/new']);

@@ -66,6 +66,10 @@ export class ClientListComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  goToHorses() {
+    this.router.navigate(['/horses']);
+  }
+
   editClient(client: Client) {
     this.router.navigate(['/clients', client.id]);
   }
