@@ -13,7 +13,7 @@ import { InstructorListComponent } from './components/instructors/instructor-lis
 import { InstructorFormComponent } from './components/instructors/instructor-form.component';
 import { InstructorDetailComponent } from './components/instructors/instructor-detail.component';
 import { TrainingListComponent } from './components/trainings/training-list.component';
-//import { TrainingFormComponent } from './components/trainings/training-form.component';
+import { TrainingFormComponent } from './components/trainings/training-form.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -28,7 +28,7 @@ export const routes: Routes = [
   { path: 'instructors/new', component: InstructorFormComponent },
   { path: 'instructors/:id', component: InstructorDetailComponent },
   { path: 'trainings', component: TrainingListComponent },
-  //{ path: 'trainings/new', component: TrainingFormComponent },
+  { path: 'trainings/new', component: TrainingFormComponent },
 ];
 
 @NgModule({

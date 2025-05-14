@@ -1,8 +1,16 @@
+<div class="top-right">
+    <button mat-icon-button (click)="goToLogin()">
+      <img src="assets/door.png" alt="Войти" width="32" height="32">
+    </button>
+    <button mat-icon-button (click)="goToHorses()">
+        <img src="/assets/home.png" alt="Horses" width="32" height="32">
+    </button>
+</div>
 <div class="training-list-container">
     <div class="training-list-header">
-      <!-- <button mat-raised-button color="primary" class="add-training-btn" (click)="addTraining()">
+      <button mat-raised-button color="primary" class="add-training-btn" (click)="goToCreate()">
         Добавить тренировку
-      </button> -->
+      </button>
     </div>
     <div class="training-table-wrapper">
       <table mat-table [dataSource]="trainings" class="mat-elevation-z8">

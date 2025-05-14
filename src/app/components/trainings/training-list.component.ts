@@ -60,6 +60,11 @@ export class TrainingListComponent implements OnInit {
     this.router.navigate(['/horses']);
   }
 
+  goToCreate() {
+    this.router.navigate(['/trainings/new']);
+  }
+  
+
   editTraining(training: any) {
     this.router.navigate(['/trainings', training.id]);
   }

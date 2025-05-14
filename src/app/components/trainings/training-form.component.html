@@ -1,0 +1,38 @@
+<div class="training-form-container">
+    <h2>Добавить тренировку</h2>
+    <form [formGroup]="trainingForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+            <mat-label>Клиент</mat-label>
+            <mat-select formControlName="clientId" required>
+              <mat-option *ngFor="let client of clients" [value]="client.id">
+                {{ client.lastName }} <!-- Отображаем фамилию клиента -->
+              </mat-option>
+            </mat-select>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Инструктор</mat-label>
+        <mat-select formControlName="instructorId" required>
+          <mat-option *ngFor="let instructor of instructors" [value]="instructor.id">
+            {{ instructor.lastName }} 
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Лошадь</mat-label>
+        <mat-select formControlName="horseId" required>
+          <mat-option *ngFor="let horse of horses" [value]="horse.id">
+            {{ horse.name }} 
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Дата и время</mat-label>
+        <input matInput formControlName="dateTime" type="datetime-local" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Продолжительность (от 30 до 90 мин)</mat-label>
+        <input matInput formControlName="duration" type="number" required>
+      </mat-form-field>
+      <button mat-raised-button type="submit" [disabled]="trainingForm.invalid">Добавить</button>
+    </form>
+  </div>

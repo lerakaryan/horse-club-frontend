@@ -1,0 +1,32 @@
+.training-form-container {
+    width: 100%;
+    max-width: 480px; /* Максимальная ширина формы */
+    margin: 32px auto; /* Центрирование формы */
+    background: #fff8f0; /* Цвет фона */
+    border-radius: 16px; /* Закругленные углы */
+    box-shadow: 0 4px 24px rgba(110, 70, 40, 0.08); /* Тень */
+    border: 1px solid #d2b48c; /* Цвет рамки */
+    padding: 24px 32px 16px 32px; /* Отступы внутри формы */
+  }
+  
+  .full-width {
+    width: 100%; /* Полная ширина для элементов формы */
+  }
+  
+  .add-btn {
+    background: #a1887f; /* Цвет кнопки добавления */
+    color: #5d4037 !important; /* Цвет текста кнопки */
+    font-weight: bold; /* Жирный текст */
+  }
+  
+  .cancel-btn {
+    color: #5d4037 !important; /* Цвет текста кнопки отмены */
+    font-weight: bold; /* Жирный текст */
+  }
+  
+  .form-actions {
+    display: flex; /* Использование flexbox для выравнивания кнопок */
+    gap: 16px; /* Промежуток между кнопками */
+    margin-top: 16px; /* Отступ сверху */
+    justify-content: flex-end; /* Выравнивание кнопок вправо */
+  }
